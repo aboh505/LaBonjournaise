@@ -61,9 +61,10 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-3">{t.nav}</h3>
           <ul className="space-y-1 text-gray-300">
             <li><a href="/" className="hover:underline">{t.home}</a></li>
+            <li><a href="/about" className="hover:underline">{t.about}</a></li>
+            <li><a href="/blog" className="hover:underline">{t.blog}</a></li>
+            <li><a href="/contact" className="hover:underline">{t.contact}</a></li>
             <li><a href="/dashboard" className="hover:underline">{t.dashboard}</a></li>
-            <li><a href="/login" className="hover:underline">{t.login}</a></li>
-            <li><a href="/register" className="hover:underline">{t.register}</a></li>
           </ul>
         </div>
 
