@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useLanguage } from '../context/LanguageContext';
+// import { useLanguage } from '../context/LanguageContext';
 
 const translations = {
   fr: {
@@ -22,8 +22,8 @@ const translations = {
 };
 
 export default function Users() {
-  const { lang } = useLanguage();
-  const t = translations[lang];
+  // const { lang } = useLanguage();
+  // const t = translations[lang];
   const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {

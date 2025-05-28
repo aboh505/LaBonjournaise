@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { Star } from "lucide-react";
 import { useLanguage } from '../../context/LanguageContext';
@@ -32,7 +32,8 @@ const translations = {
   }
 };
 
-export default function ProductDetailPage({ params }) {
+export default function ProductDetailPage() {
+  const params = useParams();
   const { lang } = useLanguage();
   const t = translations[lang];
   const { id } = params;
