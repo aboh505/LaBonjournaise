@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ShoppingCart, Star } from 'lucide-react';
-import { useUser } from '../context/UserContext';
+
 import { useLanguage } from '../context/LanguageContext';
 
 const defaultProducts = [
@@ -61,40 +61,12 @@ const translations = {
 export default function Page() {
   const { lang } = useLanguage();
   const t = translations[lang];
-  const { user } = useUser();
+
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [products, setProducts] = useState(defaultProducts);
-  const [denied, setDenied] = useState(false);
 
-  useEffect(() => {
-    // Vérifie la présence d'un user dans localStorage
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    // Admin : accès direct
-    if (user && user.role === 'admin') return;
-    // Pas connecté ou pas enregistré
-    if (!user || !storedUser) {
-      setDenied(true);
-      setTimeout(() => router.replace('/login'), 2000);
-      return;
-    }
-  }, [user, router]);
 
-  if (denied) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="bg-white rounded-xl shadow p-8 text-center">
-          <h2 className="text-xl font-bold text-red-600 mb-2">Accès refusé</h2>
-          <p className="mb-2">Veuillez vous connecter ou créer un compte pour accéder au blog.</p>
-          <p className="text-gray-500 text-sm">Redirection vers la page de connexion...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return null; // ou un loader si tu veux
-  }
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products') || '[]');
