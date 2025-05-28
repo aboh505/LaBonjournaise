@@ -79,7 +79,7 @@ export default function Navbar() {
             <option value="fr">FR</option>
             <option value="en">EN</option>
           </select>
-          {user ? (
+          {/* {user ? (
             <Link href="/dashboard/profile" className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-lg hover:bg-purple-700 transition">
               {user.username ? user.username[0].toUpperCase() : '?'}
             </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
             <Link href="/register" className="text-gray-600 hover:text-purple-600 transition">
               <User size={25} />
             </Link>
-          )}
+          )} */}
           <Link href="/cart" className="relative text-gray-600 hover:text-purple-600 transition">
             <ShoppingCart size={24} />
             {cartCount > 0 && (

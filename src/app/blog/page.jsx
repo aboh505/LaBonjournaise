@@ -8,36 +8,6 @@ import { ShoppingCart, Star } from 'lucide-react';
 
 import { useLanguage } from '../context/LanguageContext';
 
-const defaultProducts = [
-  {
-    id: 1,
-    name: 'Burger Classic',
-    description: 'Un burger juteux avec fromage, salade et tomate.',
-    price: 3500,
-    image: '/a2.jpg',
-    category: 'Burger',
-    rating: 4.5
-  },
-  {
-    id: 2,
-    name: 'Pizza Margherita',
-    description: 'Pizza italienne classique avec sauce tomate et mozzarella.',
-    price: 5000,
-    image: '/a3.jpg',
-    category: 'Pizza',
-    rating: 4.7
-  },
-  {
-    id: 3,
-    name: 'Hamburger Deluxe',
-    description: 'Hamburger avec double steak, fromage cheddar et bacon.',
-    price: 4500,
-    image: '/a4.jpg',
-    category: 'Hamburger',
-    rating: 4.6
-  },
-
-];
 
 const translations = {
   fr: {
